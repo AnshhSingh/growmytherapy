@@ -12,17 +12,16 @@ export default function ScrollAnimation({ children, delay = 0, className = '' }:
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Function to check if element is in viewport
+
     const checkIfInView = () => {
       if (elementRef.current) {
         const element = elementRef.current;
         const rect = element.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         
-        // Element is in view if it's top is below the top of the viewport
-        // and its bottom is above the bottom of the viewport
+        
         const isInView = 
-          rect.top <= windowHeight * 0.85 && // Only reveal when element is 85% into the viewport
+          rect.top <= windowHeight * 0.85 && 
           rect.bottom >= 0;
         
         if (isInView) {
@@ -31,13 +30,12 @@ export default function ScrollAnimation({ children, delay = 0, className = '' }:
       }
     };
 
-    // Add event listener
     window.addEventListener('scroll', checkIfInView);
     
-    // Check on initial render
+  
     setTimeout(checkIfInView, 100);
 
-    // Clean up
+   
     return () => {
       window.removeEventListener('scroll', checkIfInView);
     };

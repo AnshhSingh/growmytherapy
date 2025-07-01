@@ -22,7 +22,7 @@ export default function About() {
             </div>
           </div>
           
-          {/* Image */}
+    
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <div className="rounded-lg overflow-hidden">
               <Image 

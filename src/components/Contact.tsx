@@ -343,7 +343,7 @@ export default function Contact() {
                     )}
                   </div>
 
-          =
+          
                   <div className="flex space-x-4 items-center">
                     <div className="w-1/2">
                       <label htmlFor="contactMethod" className="block text-[#1E3A33] mb-1 text-sm font-light">
@@ -363,7 +363,7 @@ export default function Contact() {
                       </select>
                     </div>
 
-            //we can use a simple checkbox for the reCAPTCHA 
+            {/*we can use a simple checkbox for the reCAPTCHA */}
                     <div className="w-1/2">
                       <div className="border border-gray-300 rounded p-1 flex items-center justify-center">
                         <div className="flex items-center">
