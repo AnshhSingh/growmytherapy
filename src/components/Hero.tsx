@@ -1,37 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
-// import Separator from "./Separator";
+import Separator from "./Separator";
 
 export default function Hero() {
   return (
     <div className="min-h-screen bg-[#F3F0E8] flex flex-col">
-=
+      {/* Header */}
       <header className="container mx-auto w-[90%] sm:py-8 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="mr-3">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 0L26.7 13.3L40 20L26.7 26.7L20 40L13.3 26.7L0 20L13.3 13.3L20 0Z" fill="#A2C4C4" fillOpacity="0.8"/>
-            </svg>
-          </div>
-          <div>
-            <h3 className="text-slate-800 font-bold text-xl md:text-2xl font-cormorant">Jennifer Hahm, Ph.D.</h3>
-            <p className="text-slate-600 text-base" style={{ lineHeight: '35px' }}>Psychological Services</p>
+          <div className="flex items-center">
+            <div>
+              <Image 
+                src="/logo.png" 
+                alt="Jennifer Hahm, Ph.D. - Psychological Services" 
+                width={210} 
+                height={120} 
+                priority
+              />
+            </div>
           </div>
         </div>
       </header>
 
-    
+      {/* Main content with hero image */}
       <div className="flex-1 flex justify-center items-center w-full pb-20">
         <div 
-          className="w-11/12 flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat relative rounded-sm overflow-hidden"
+          className="w-11/12 flex flex-col items-center justify-center text-center relative rounded-sm overflow-hidden"
           style={{ 
-            backgroundImage: "url('/images/hero.jpg')",
-            backgroundPosition: "center",
-            height: "calc(85vh - 20px)"
+            height: "calc(85vh - 20px)" // Adjust height to allow background to extend
           }}
         >
-=
-          <div className="absolute inset-0 bg-black opacity-20"></div>
+          {/* Hero image with Next.js Image component */}
+          <div className="absolute inset-0">
+            <Image 
+              src="/images/hero.jpg"
+              alt="Therapy and counseling services"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 85vw"
+              quality={90}
+              priority
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center',
+              }}
+            />
+          </div>
+          
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black opacity-20 z-[1]"></div>
           
           <div className="max-w-4xl mx-auto relative z-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 leading-tight font-cormorant" style={{ fontWeight: 700 }}>
@@ -63,7 +79,7 @@ export default function Hero() {
                   margin: "0 auto"
                 }}
               >
-               
+                {/* Egg-shaped background */}
                 <div 
                   style={{
                     position: "absolute",
